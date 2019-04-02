@@ -35,7 +35,7 @@ p{
     height: 50px;
     width: 50px;
     margin: 10px;
-    float:left;
+  
   
 }
 
@@ -44,5 +44,22 @@ p{
     height: 100px;
     width: 100px;
     margin: 10px;
-    float:left;
+   
+}
+
+#scoreText1{
+    background-color: navy;
+    color: white;
+    margin: 10px;
+    height: 50px;
+    width: 100px;
+    padding: 10px;
+}
+
+#scoreText{
+    background-color: navy;
+    color: white;
+    margin: 10px;
+    height:100px;
+    width: 100px;
 }
