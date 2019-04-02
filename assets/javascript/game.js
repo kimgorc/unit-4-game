@@ -41,24 +41,41 @@ var crystalValue4 = Math.floor(Math.random() * crystalArray.length);
     
 
 // Assigning value to each button
-    crystalValue1 =$("#Crystal1");
-        console.log(crystalValue1);
 
-    crystalValue2 =$("#Crystal2");
-        console.log(crystalValue2);
+$(document).ready(function(){
 
-    crystalValue3 =$("#Crystal3");
-        console.log(crystalValue3);
+  $("#Crystal1").on("click", function() {
+    $("#Crystal1").val(crystalValue1)
+      alert(crystalValue1)
+        console.log("crystalValue1", crystalValue1);
+  });
 
-    crystalValue4 =$("#Crystal4");
-        console.log(crystalValue4);    
-  
- //onclick for the crystals
-    $(".crystals").on("click", function() {
+  $("#Crystal2").on("click", function() { 
+    $(this).val(crystalValue2)
+      alert(crystalValue2)
+        console.log("crystalValue2", crystalValue2);
+  });
 
-    var crystalValueTotal = $.merge([],"crystal1", "crystalValue2", "crystalValue3", "crystalValue4");
+  $("#Crystal3").on("click", function() { 
+    $(this).val(crystalValue3)
+      alert(crystalValue3)
+        console.log("crystalValue3", crystalValue3);
+  });
 
-      crystalValueTotal = parseInt(crystalValueTotal);
+  $("#Crystal4").on("click", function() { 
+    $(this).val(crystalValue4)
+      alert(crystalValue4)
+        console.log("crystalValue4", crystalValue4);
+  });
+
+
+//merge crystal values together to make user score
+
+var crystalValueTotal = ($(this).attr("totalValue"));
+  crystalValue = parseInt(crystalValueTotal);
+
+//  var crystalValueTotal = $.extend( crystalValue1, crystalValue2, crystalValue3, crystalValue4);
+//       crystalValueTotal = parseInt(crystalValueTotal);
       
       scoreCount += crystalValueTotal;
 
@@ -66,7 +83,7 @@ var crystalValue4 = Math.floor(Math.random() * crystalArray.length);
     console.log("score", scoreCount)
     
 
-    // All of the same game win-lose logic applies. So the rest remains unchanged.
+// All of the same game win-lose logic applies. So the rest remains unchanged.
     alert("New score: " + scoreCount);
 
     if (scoreCount === randomNumber) {
@@ -79,48 +96,7 @@ var crystalValue4 = Math.floor(Math.random() * crystalArray.length);
       alert("You lose!!");
     }
 
-
-  });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var indexOfCrystalValue = Math.floor(Math.random() * crystalArray.length); 
-
-// var crystalValue1 = (crystalArray[indexOfCrystalValue]); 
-//   console.log("crystal1", crystalValue1);
-  
-// var crystalValue2 = (crystalArray.splice(crystalValue1, 1)); 
-//   console.log("crystal2", crystalValue2);
-
-// var crystalValue3 = (crystalArray.splice(crystalValue2, 1)); 
-//   console.log("crystal3", crystalValue3);
-
-// var crystalValue4 = (crystalArray.splice(crystalValue3, 1)); 
-//   console.log("crystal4", crystalValue4);
-
+  })
 
 
 // Display all on the html.
