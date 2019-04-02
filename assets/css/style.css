@@ -1,2 +1,48 @@
 
+body{
+    background-image: url(../images/background-2719572_960_720.jpg);
+    height: 100%;
+    width: 100%;
 
+}
+
+h1{
+    font-size: 40px;
+    height: 50px;
+    width: 400px;
+    font-weight: bold;
+    background-color: lime;
+    margin: 10px;
+}
+
+#instructions{
+    height: 225px;
+    width: 500px;
+    background-color: lightskyblue;
+    margin: 10px;
+
+}
+
+p{
+    padding: 10px;
+}
+
+#randomNumberText{
+    font-weight: bolder;
+    font: 30px;
+    text-align: center;
+    background-color: lightcoral;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    float:left;
+  
+}
+
+#counter{
+    background: pink;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    float:left;
+}
