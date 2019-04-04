@@ -29,11 +29,11 @@ p{
 
 #randomNumberText{
     font-weight: bolder;
-    font: 30px;
+    font-size: 30px;
     text-align: center;
     background-color: lightcoral;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     margin: 10px;
   
   
@@ -51,15 +51,28 @@ p{
     background-color: navy;
     color: white;
     margin: 10px;
-    height: 50px;
+    height: 30px;
     width: 100px;
-    padding: 10px;
+ 
 }
 
 #scoreText{
     background-color: navy;
     color: white;
     margin: 10px;
-    height:100px;
+    height:75px;
     width: 100px;
+    font-size:60px;
+    text-align:center;
+}
+
+#reset{
+    background-color: yellow;
+    font-weight: bolder;
+    height: 100px;
+    width:100px;
+    margin: 10px;
+    position: relative;
+    bottom: 45px;
+
 }

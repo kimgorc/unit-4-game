@@ -2,7 +2,6 @@
 
 var numberArray = [];
 var crystalArray = [];
-var crystalTotal = [];
 var scoreCount= 0;
 var winCount = 0;
 var lossCount = 0;
@@ -13,6 +12,7 @@ var randomNumberText = document.getElementById("randomNumberText");
 var winCountText = document.getElementById("winCountText");
 var lossCountText = document.getElementById("lossCountText");
 var scoreText = document.getElementById("scoreText");
+var resetText = document.getElementById("reset");
 
 //creating a range to select a numberArray between 19-120
 
@@ -26,7 +26,8 @@ var randomNumber = (numberArray[Math.floor(Math.random() * numberArray.length)])
     randomNumber = parseInt(randomNumber);
     console.log(randomNumber);
 
-//giving the crystals a random value between 1-12 and not repeating
+randomNumberText.textContent = randomNumber ;
+//giving the crystals a random value between 1-12 
     for (var i=1; i<=12; i++){
         crystalArray.push(i);
     }
@@ -47,72 +48,122 @@ var crystalValue4 = Math.floor(Math.random() * crystalArray.length);
   console.log("crystal4", crystalValue4);
     
 
-// Assigning value to each button
+// game logic
 
 $(document).ready(function(){
-    
+
+//onclic event   
   $("#Crystal1").on("click", function() {
-      crystalTotal.push(crystalValue1);
-        console.log("CrystalTotal", crystalTotal);
-        
+//
+        scoreCount +=(crystalValue1);
+          console.log("score", scoreCount)
+          scoreText.textContent = scoreCount;
+
+          if (scoreCount === randomNumber) {
+            winCount ++ ;
+            alert("You win!");
+            scoreCount = 0
+          }
+      
+          else if (scoreCount >= randomNumber) {
+            lossCount ++;
+            alert("You lose!!");
+            scoreCount = 0
+          }
+          winCountText.textContent = "Wins:" + winCount ;
+          lossCountText.textContent = "Losses: " + lossCount ;
   });
 
   $("#Crystal2").on("click", function() { 
-      crystalTotal.push(crystalValue2);
-        console.log("CrystalTotal", crystalTotal);
-        
+
+        scoreCount +=(crystalValue2);
+          console.log("score", scoreCount)
+          scoreText.textContent = scoreCount;
+
+          if (scoreCount === randomNumber) {
+            winCount ++ ;
+            alert("You win!");
+            scoreCount = 0
+          }
+      
+          else if (scoreCount >= randomNumber) {
+            lossCount ++;
+            alert("You lose!!");
+            scoreCount = 0
+          }
+          winCountText.textContent = "Wins:" + winCount ;
+          lossCountText.textContent = "Losses: " + lossCount ;
   });
 
   $("#Crystal3").on("click", function() {
-      crystalTotal.push(crystalValue3);
-        console.log("CrystalTotal", crystalTotal);
 
+        scoreCount +=(crystalValue3);
+          console.log("score", scoreCount)
+          scoreText.textContent = scoreCount;
+
+          if (scoreCount === randomNumber) {
+            winCount ++ ;
+            alert("You win!");
+            scoreCount = 0
+          }
+      
+          else if (scoreCount >= randomNumber) {
+            lossCount ++;
+            alert("You lose!!");
+            scoreCount = 0
+          }
+          winCountText.textContent = "Wins:" + winCount ;
+          lossCountText.textContent = "Losses: " + lossCount ;
   });
 
-  $("#Crystal4").on("click", function() { 
-      crystalTotal.push(crystalValue4);
-        console.log("CrystalTotal", crystalTotal);
- 
+  $("#Crystal4").on("click", function() {
+
+        scoreCount +=(crystalValue4);
+          console.log("score", scoreCount)
+          scoreText.textContent = scoreCount;
+
+          if (scoreCount === randomNumber) {
+            winCount ++ ;
+            alert("You win!");
+            scoreCount = 0
+
+          }
+      
+          else if (scoreCount >= randomNumber) {
+            lossCount ++;
+            alert("You lose!!");
+            scoreCount = 0
+          }
+          winCountText.textContent = "Wins:" + winCount ;
+          lossCountText.textContent = "Losses: " + lossCount ;
   });
-
-
-//merge value to make user score
-
-var total = 0;
-  for (var i = 0; i < crystalTotal.length; i++) {
-      total += crystalTotal[i] << 0;
-  }
-
-console.log(total)
-
-
-  // var crystalValue = ($(this).attr(crystalTotal));
-
-  // crystalValue= Integer.parseInt(crystalTotal);
-  // console.log("value", crystalValue);
-
-    
-
-// All of the same game win-lose logic applies. So the rest remains unchanged.
-   
-
-    // if (scoreCount === randomNumber) {
-    //   winCount ++ ;
-    //   alert("You win!");
-    // }
-
-    // else if (scoreCount >= randomNumber) {
-    //   lossCount ++;
-    //   alert("You lose!!");
-    // }
-
   
+  $("#reset").on("click", function() {
 
-
-// Display all on the html.
+    scoreCount = 0; 
+    scoreText.textContent = scoreCount;
     
-randomNumberText.textContent = randomNumber ;
-winCountText.textContent = "Wins:" + winCount ;
-lossCountText.textContent = "Losses: " + lossCount ;
-scoreText.textContent = scoreCount;
+      randomNumber = (numberArray[Math.floor(Math.random() * numberArray.length)]); 
+        randomNumber = parseInt(randomNumber);
+        console.log(randomNumber);
+
+        randomNumberText.textContent = randomNumber ;
+
+
+        crystalValue1 = Math.floor(Math.random() * crystalArray.length); 
+            crystalValue1= parseInt(crystalValue1)
+            console.log("crystal", crystalValue1);
+        crystalValue2 = Math.floor(Math.random() * crystalArray.length); 
+            crystalValue2= parseInt(crystalValue2)
+            console.log("crystal2", crystalValue2);
+          crystalValue3 = Math.floor(Math.random() * crystalArray.length); 
+            crystalValue3= parseInt(crystalValue3)
+            console.log("crystal3", crystalValue3);
+        crystalValue4 = Math.floor(Math.random() * crystalArray.length);
+            crystalValue4= parseInt(crystalValue4) 
+            console.log("crystal4", crystalValue4);
+      });
+
+      winCountText.textContent = "Wins:" + winCount ;
+      lossCountText.textContent = "Losses: " + lossCount ;
 });
