@@ -62,13 +62,13 @@ $(document).ready(function(){
           if (scoreCount === randomNumber) {
             winCount ++ ;
             alert("You win!");
-            scoreCount = 0
+            newgame(); 
           }
       
           else if (scoreCount >= randomNumber) {
             lossCount ++;
             alert("You lose!!");
-            scoreCount = 0
+            newgame();
           }
           winCountText.textContent = "Wins:" + winCount ;
           lossCountText.textContent = "Losses: " + lossCount ;
@@ -83,13 +83,13 @@ $(document).ready(function(){
           if (scoreCount === randomNumber) {
             winCount ++ ;
             alert("You win!");
-            scoreCount = 0
+            newgame() ;
           }
       
           else if (scoreCount >= randomNumber) {
             lossCount ++;
             alert("You lose!!");
-            scoreCount = 0
+            newgame() ;
           }
           winCountText.textContent = "Wins:" + winCount ;
           lossCountText.textContent = "Losses: " + lossCount ;
@@ -104,13 +104,13 @@ $(document).ready(function(){
           if (scoreCount === randomNumber) {
             winCount ++ ;
             alert("You win!");
-            scoreCount = 0
+            newgame() ;
           }
       
           else if (scoreCount >= randomNumber) {
             lossCount ++;
             alert("You lose!!");
-            scoreCount = 0
+            newgame(); 
           }
           winCountText.textContent = "Wins:" + winCount ;
           lossCountText.textContent = "Losses: " + lossCount ;
@@ -125,20 +125,20 @@ $(document).ready(function(){
           if (scoreCount === randomNumber) {
             winCount ++ ;
             alert("You win!");
-            scoreCount = 0
+            newgame();
 
           }
       
           else if (scoreCount >= randomNumber) {
             lossCount ++;
             alert("You lose!!");
-            scoreCount = 0
+            newgame();
           }
           winCountText.textContent = "Wins:" + winCount ;
           lossCountText.textContent = "Losses: " + lossCount ;
   });
   
-  $("#reset").on("click", function() {
+ function newgame() {
 
     scoreCount = 0; 
     scoreText.textContent = scoreCount;
@@ -162,8 +162,9 @@ $(document).ready(function(){
         crystalValue4 = Math.floor(Math.random() * crystalArray.length);
             crystalValue4= parseInt(crystalValue4) 
             console.log("crystal4", crystalValue4);
-      });
+      
 
       winCountText.textContent = "Wins:" + winCount ;
       lossCountText.textContent = "Losses: " + lossCount ;
-});
+}
+})

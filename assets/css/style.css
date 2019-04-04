@@ -66,13 +66,3 @@ p{
     text-align:center;
 }
 
-#reset{
-    background-color: yellow;
-    font-weight: bolder;
-    height: 100px;
-    width:100px;
-    margin: 10px;
-    position: relative;
-    bottom: 45px;
-
-}
